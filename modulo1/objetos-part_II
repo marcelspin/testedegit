@@ -1,0 +1,73 @@
+
+let livros =  [
+
+    { titulo: 'Arquimedes', autor: 'Jao da Silva'},
+    { titulo: 'Surprise', autor: 'Maria Severina'},
+    { titulo: 'A sociedade', autor: 'Dalmiro da Fraga'},
+    { titulo: 'Tubarão', autor: 'Sonia da Lira'},
+]
+console.table (livros)
+
+// outra método
+
+for ( const livro of livros) {
+    console.log ( livro.titulo, livro.autor)
+    }
+
+/* Crie objeto "Carro" - use for in  para imprimir cada propriedade no formato:
+"Chave" e "Valor". */
+
+let carro = { marca: 'Ford', modelo: 'Mavericke', ano: '1977', cor: 'Preto'}
+for ( let chave in carro) {
+console.log (`${chave}: ${carro[chave]}`)
+}
+
+/* Crie em array de cidades, imprima apenas as cidades  que começão com a letra "S" usando apenas  'for of'. */
+
+let cidades = [ 'mexico', 'honduras', 'suiça', 'sergipe']
+for ( let cidade of cidades) {
+    if ( cidade.startsWith('s'))
+    console.log (cidade)
+
+}
+
+/* Crie um arry de números e use " forEach" para somar todos os números */
+
+let numeros  = [4,5,6,7,8,9,10]
+let soma  = 0
+
+numeros.forEach ((n)=> {
+    soma += n
+})
+console.log (soma)
+
+/* Dados Array de aluno abaixo , use os loops que preferir para gerar um relatorio com três
+informações: lista de aprovados, lista de reprovados e a média geral da turma: */
+
+const turma = [
+    { nome:'Aline', nota: 9.0},
+    { nome:'Bruno', nota:5.0},
+    { nome:'Carla', nota:7.0},
+    { nome:'Daniel', nota:3.8},
+    { nome:'Elisa', nota:8.2},
+] 
+
+let aprovados = []
+let reprovados = []
+let soma  = 0
+
+turma.forEach(({nome, nota }) => {
+    soma += nota
+    if (nota >= 6) {
+        aprovados.push(nome)
+    }else {
+        reprovados.push(nome)
+    } 
+})
+
+let media = soma/turma.length
+
+console.log ( 'Aprovados:' + aprovados)
+console.log ( 'Reprovados:' + reprovados)
+console.log ( `Média Geral: ${media.toFixed(2)}`)
+
