@@ -1,0 +1,21 @@
+.caixa {
+    background-color: brown;
+    padding: 30px;
+    margin: 15px;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    background-color: aqua;
+    justify-content:center;
+    height: 400px;
+    align-items: center; fsdfsdfsdfsdfsdf
+    flex-wrap: wrap; /*quebra de linha quando sem espaço no container*/
+
+
+
+
+
+
+
+}

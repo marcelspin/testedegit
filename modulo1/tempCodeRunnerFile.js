@@ -1,20 +1,77 @@
-const prompt = require('prompt-sync')()
-function calcularNovoSalario(salario, percentual) {
-  if (salario < 1500) {
-    percentual = percentual * 2; 
-  }
+let inicio = null;
 
-  const aumento = salario * (percentual / 100);
-  const novoSalario = salario + aumento;
+function adicionar(tarefa) {
+    const novoNo = {
+        valor: tarefa,
+        proximo: null
+    };
 
-  console.log("Salário original: R$ " + salario.toFixed(2));
-  console.log("Percentual aplicado: " + percentual + "%");
-  console.log("Novo salário: R$ " + novoSalario.toFixed(2));
+    if (inicio === null) {
+        inicio = novoNo;
+    } else {
+        let atual = inicio;
+
+        while (atual.proximo !== null) {
+            atual = atual.proximo;
+        }
+
+        atual.proximo = novoNo;
+    }
+
+    console.log(`Tarefa "${tarefa}" adicionada.`);
 }
-const salarioEntrada = prompt("Digite o salário mensal do funcionário:");
-const percentualEntrada = prompt("Digite o percentual de aumento:");
 
-const salario = parseFloat(salarioEntrada);
-const percentual = parseFloat(percentualEntrada);
+function remover(tarefa) {
+    if (inicio === null) {
+        console.log("Lista vazia.");
+        return;
+    }
+ 
+    if (inicio.valor === tarefa) {
+        inicio = inicio.proximo;
+        console.log(`Tarefa "${tarefa}" removida.`);
+        return;
+    }
 
-calcularNovoSalario(salario, percentual);
+    let atual = inicio;
+
+    while (atual.proximo !== null && atual.proximo.valor !== tarefa) {
+        atual = atual.proximo;
+    }
+
+    if (atual.proximo !== null) {
+        atual.proximo = atual.proximo.proximo;
+        console.log(`Tarefa "${tarefa}" removida.`);
+    } else {
+        console.log(`Tarefa "${tarefa}" não encontrada.`);
+    }
+}
+function exibir() {
+    if (inicio === null) {
+        console.log("Nenhuma tarefa cadastrada.");
+        return;
+    }
+
+    let atual = inicio;
+    console.log("Lista de tarefas:");
+
+    while (atual !== null) {
+        console.log(`- ${atual.valor}`);
+        atual = atual.proximo;
+    }
+
+    console.log("--------------------");
+}
+
+adicionar("Estudar Java");
+adicionar("Fazer exercícios");
+adicionar("Enviar relatórios");
+adicionar("Participar da reunião");
+
+console.log("\nANTES DA REMOÇÃO:");
+exibir();
+
+remover("Enviar relatório");
+
+console.log("\nDEPOIS DA REMOÇÃO:");
+exibir();
