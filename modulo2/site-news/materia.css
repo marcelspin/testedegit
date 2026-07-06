@@ -4,8 +4,29 @@
     --cor-suave:#6b6b6b;
     --cor-fundo:#eceae5;
     --cor-card:#ffffff;
-    --font-corpo: 'tre'
-    .fon
+    --fonte-corpo: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    --fonte-iu: Arial, Helvetica, sans-serif;
+    --raio: 8px;
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+
+    }
+    body {
+        font-family: var(--fonte-corpo);
+
+    }
+    .cabecalho {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 0;
+        border-bottom: 4px solid var(--cor-texto);
+
+
+
+    }
 
 
 }
