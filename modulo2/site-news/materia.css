@@ -1,33 +1,94 @@
 :root {
-    --cor-destaque:#c0392b;
+    --cor-destaque: #c0392b;
     --cor-texto: #1a1a1a;
-    --cor-suave:#6b6b6b;
-    --cor-fundo:#eceae5;
-    --cor-card:#ffffff;
+    --cor-suave: #6b6b6b;
+    --cor-fundo: #eceae5;
+    --cor-card: #ffffff;
     --fonte-corpo: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     --fonte-iu: Arial, Helvetica, sans-serif;
     --raio: 8px;
-    *{
+
+    * {
         margin: 0px;
         padding: 0px;
         box-sizing: border-box;
 
     }
+
     body {
         font-family: var(--fonte-corpo);
+        color: var(--cor-texto);
+        background-color: var(--cor-fundo);
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 16px;
+        
 
     }
+
     .cabecalho {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 14px 0;
+        padding: 14px;
         border-bottom: 4px solid var(--cor-texto);
-        padding: 30px;
+        background-color: var(--cor-fundo);
+        position: sticky;
+        top: 0;
 
+    }
+
+    .logo {
+        font-size: 26px;
+        color: var(--cor-texto);
+        text-decoration: none;
+    }
+
+    .navegacao {
+        display: flex;
+        gap: 20px;
+
+    }
+
+    .navegacao a {
+        font-family: var(--fonte-iu);
+        font-size: 15px;
+        color: var(--cor-texto);
+        text-decoration: none;
+
+    }
+
+    .navegacao a:hover {
+        color: var(--cor-destaque);
+
+    }
+
+    /*Trilha de navegação*/
+
+    .trilha {
+        
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        font-family: var(--fonte-iu);
+        font-size: 13px;
+        color: var(--cor-suave);
+        padding: 16px 0;
+    }
+    .trilha a {
+        color: var(--cor-suave);
+        text-decoration: none;
+    }
+
+    .trilha a:hover {
+        color: var(--cor-destaque);
+    }
+    .trilha .atual {
+        color: var(--cor-texto);
 
 
     }
+
 
 
 }
