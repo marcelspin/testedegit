@@ -211,6 +211,7 @@
     }
 
     /*Tags*/
+    
     .tags {
         display: flex;
         flex-wrap: wrap;
