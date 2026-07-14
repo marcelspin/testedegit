@@ -10,10 +10,14 @@
     <p>Apreendendo DOM em javaScript</p>
     <p>Aqui será Alterado</p>     <!-- este texto e cor fui mudado pelo comando abaixo -->
     <p id="msg">Vamos usar outro <b>seletor</b></p>
-    <label for="nome">Digite seu Nome</label>
-    <input type="text" name="nome" id="nome">
-    <button onclick="mostrarNome">Mostrar</button>
+
+    <label for="nome">Digite seu Nome:</label>
+    <input type="text" id="nome" name="nome">
+    <button onclick="mostrarNome()">Mostrar</button>
+
     <p id="resultado"></p>
+
+    <p id="texto">Vamos Usar querySelector</p>
 
     <script>
         let paragrafo=document.getElementsByTagName ('p')[1]
@@ -25,8 +29,11 @@
 
         function mostrarNome(){
             let nome = document.getElementsByName ("nome")[0].value
-            document.getElementById("resultado").innerText = 'Olá, ${nome}'
+            document.getElementById("resultado").innerText = `Olá, ${nome}`
         }
+
+        let texto = document.querySelector("#texto")
+        texto.innerText = "Usamos o querySelector pelo id"
         
          
         
